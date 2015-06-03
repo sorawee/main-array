@@ -15,8 +15,8 @@ def write(s):
 
 def main():
     s = raw_input()
-    l = len(s)
-    s = s.replace('\\', r'\\\\')
+    l = len(s.decode('string-escape'))
+    s = s.encode('string-escape')
     src = r"""
     void main() {{
         __asm__ (

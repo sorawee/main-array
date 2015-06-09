@@ -1,4 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
+
+"""
+Inspired (and copied) from
+http://jroweboy.github.io/c/asm/2015/01/26/when-is-main-not-a-function.html
+"""
 
 import sys
 import subprocess
@@ -33,7 +38,7 @@ def main():
             "movl $60,%eax;\n"
             "xorl %ebx,%ebx; \n"
             "syscall;\n"
-            // Store the Hello World inside the main function
+            // Store the message inside the main function
             "message: .ascii \"{0}\";"
         );
     }}
@@ -61,13 +66,7 @@ def main():
                       for line in child.before.split('\n')[1:-2]]
     
     nums = [item for sublist in nums for item in sublist]
-    
-    src = "const int main[] = {{{}}};".format(",".join(nums))
-    
-    print(src)
-    
-    write(src)
-    compile()
+    print("const int main[] = {{{}}};".format(",".join(nums)))
 
 if __name__ == "__main__":
     main()

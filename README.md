@@ -22,3 +22,10 @@ Run:
 	$ ./myfile
 	I love U
 	$
+
+## So?
+
+    $ cat file.c
+	const int main[] = {..., ..., ..., ....};
+	
+## WHAT???
